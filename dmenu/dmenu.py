@@ -63,10 +63,15 @@ def show(
         items,
         command='dmenu',
         bottom=None,
+        center=None,
+        true_center=None,
+        min_width=None,
         fast=None,
         case_insensitive=None,
         lines=None,
+        columns=None,
         monitor=None,
+        window=None,
         prompt=None,
         font=None,
         background=None,
@@ -140,6 +145,15 @@ def show(
     if bottom:
         args.append('-b')
 
+    if center:
+        args.append('-c')
+
+    if true_center:
+        args.append('-C')
+
+    if min_width is not None:
+        args.extend(('-mw', str(min_width)))
+
     if fast:
         args.append('-f')
 
@@ -149,8 +163,14 @@ def show(
     if lines is not None:
         args.extend(('-l', str(lines)))
 
+    if columns is not None:
+        args.extend(('-g', str(columns)))
+
     if monitor is not None:
         args.extend(('-m', str(monitor)))
+
+    if window is not None:
+        args.extend(('-w', str(window)))
 
     if prompt is not None:
         args.extend(('-p', prompt))

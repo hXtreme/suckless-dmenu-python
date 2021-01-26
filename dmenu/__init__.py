@@ -4,4 +4,4 @@ dmenu is a dynamic menu for X, originally designed for dwm. It manages large num
 
 from .dmenu import show, version, DmenuError, DmenuCommandError, DmenuUsageError
 
-__version__ = '0.2.1'
+__version__ = '0.2.1-1'
